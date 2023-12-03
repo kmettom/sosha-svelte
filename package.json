@@ -1,7 +1,12 @@
 {
 	"name": "sosha-svelte",
 	"version": "0.0.1",
+	"engines": {
+		"node": "18.x"
+	},
+	"private": false,
 	"scripts": {
+		"start": "node .svelte-kit/output/server/index.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",

@@ -85,6 +85,8 @@
 		margin-top: 20px;
 	}
 	.post{
+		text-decoration: none;
+		color: #343a40;
 		display: inline-block;
 		border: 2px solid var(--gray);
 		border-radius: 10px;
