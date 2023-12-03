@@ -56,14 +56,14 @@
 	</div>
 	<div class="posts-wrapper">
 		{#each posts as post}
-			<div class="post" class:added={addedPostIds.includes(post.id)} on:click={() => {addPostToCampaign(post)}}>
+			<button class="post" class:added={addedPostIds.includes(post.id)} on:click={() => {addPostToCampaign(post)}}>
 				<div class="post-title">
 					<h2>{post.title}</h2>
 				</div>
 				<div class="post-content">
 					<p>{post.content}</p>
 				</div>
-			</div>
+			</button>
 		{/each}
 	</div>
 

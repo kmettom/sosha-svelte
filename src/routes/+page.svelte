@@ -26,9 +26,6 @@
 	h1 {
 		width: 100%;
 	}
-	h2 {
-		font-weight: 600;
-	}
 
 
 </style>
