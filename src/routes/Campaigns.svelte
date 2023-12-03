@@ -24,7 +24,9 @@
 
 <div class="campaigns">
 	{#if campaignsData.length == 0}
-		<strong>No campaigns added yet</strong>
+		<p class="no-campaigns">
+			<strong>No campaigns added yet</strong>
+		</p>
 	{/if}
 	<div class="campaigns-wrapper">
 		{#each campaignsData as campaign}
@@ -55,6 +57,9 @@
         max-width: 800px;
         margin: 0 auto;
     }
+	.no-campaigns{
+		text-align: center;
+	}
 	.campaign{
 		vertical-align: top;
 		display: inline-block;
