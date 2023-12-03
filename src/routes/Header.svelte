@@ -7,7 +7,7 @@
 <header>
 	<div class="corner">
 		<a href="/">
-			<img src={soshaLogo} alt="SvelteKit" />
+			<img src={soshaLogo} alt="Sosha" />
 		</a>
 	</div>
 

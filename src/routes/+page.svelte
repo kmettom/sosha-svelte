@@ -12,14 +12,12 @@
 	<h1>
 		Dashboard
 	</h1>
-
-	<Counter />
-
-
-	<div>
-		My campaings
+	<h2>
+		My campaigns
+	</h2>
+	<div class="btn-wrapper">
+		<a class="" href="/catalog" >Add campaign</a>
 	</div>
-
 	<Campaigns />
 </section>
 
@@ -34,6 +32,9 @@
 
 	h1 {
 		width: 100%;
+	}
+	h2 {
+		font-weight: 600;
 	}
 
 
