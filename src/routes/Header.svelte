@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+	import soshaLogo from '$lib/images/sosha-logo.svg';
+	import githubLogo from '$lib/images/github.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			<img src={soshaLogo} alt="SvelteKit" />
 		</a>
 	</div>
 
@@ -17,13 +17,10 @@
 		</svg>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
+				<a href="/">Dashboard</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li aria-current={$page.url.pathname === '/catalog' ? 'page' : undefined}>
+				<a href="/catalog">Catalog</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -31,9 +28,9 @@
 		</svg>
 	</nav>
 
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
+	<div class="corner git">
+		<a href="https://github.com/kmettom/sosha-svelte">
+			<img src={githubLogo} alt="GitHub" />
 		</a>
 	</div>
 </header>
@@ -42,11 +39,17 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		background: var(--white);
+		border-bottom: 1px solid var(--gray);
 	}
 
 	.corner {
-		width: 3em;
+		width: 150px;
 		height: 3em;
+		margin: 10px;
+	}
+	.corner.git{
+		width: 3em;
 	}
 
 	.corner a {
@@ -58,8 +61,8 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 125px;
+		/*height: 2em;*/
 		object-fit: contain;
 	}
 
@@ -106,7 +109,7 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+		border-top: var(--size) solid var(--yellow);
 	}
 
 	nav a {
@@ -124,6 +127,6 @@
 	}
 
 	a:hover {
-		color: var(--color-theme-1);
+		color: var(--yellow);
 	}
 </style>
