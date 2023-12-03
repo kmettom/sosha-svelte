@@ -1,28 +1,59 @@
 <script>
-	let count = 10;
-	//
-	// function addCampaings(n, m) {
-	// 	// handle negative numbers
-	// 	return ((n % m) + m) % m;
-	// }
+    import {campaigns} from '../stores.js'
+    import {get} from 'svelte/store'
+    import {onDestroy, onMount} from 'svelte'
+
+    let campaignsCount = 0
+    let campaignsData = []
+
+    const unsubscribe = campaigns.subscribe((value) => {
+        campaignsCount = value.length
+        campaignsData = value
+    })
+
+    onMount(() => {
+        campaignsData = get(campaigns)
+        console.log("campaignsData" , campaignsData)
+        // campaignsData = campaigns
+	})
+
+    onDestroy(() => {
+        unsubscribe()
+    })
+
 </script>
 
-<div class="campaings">
- <div>
-	 <h2>
-		 Campaings
-	 </h2>
-	 <div class="campaings-wrapper">
-		xxx {count}
-	 </div>
- </div>
+<div class="campaigns">
+	<div>
+		<h2>Campaigns</h2>
+		<div class="campaigns-wrapper">
+			{#if campaignsData.length > 0}
+				{#each campaignsData as campaign}
+					<div class="campaign">
+						<div class="campaign-name">
+							{campaign.name}
+						</div>
+						<div class="campaign-posts">
+							<ol>
+								{#each campaign.posts as post}
+									<li>
+										{post.title}
+									</li>
+								{/each}
+							</ol>
+						</div>
+					</div>
+				{/each}
+			{/if}
+		</div>
+	</div>
 </div>
 
 <style>
-	.campaings-wrapper{
-		display: flex;
-		max-width: 800px;
-		margin: 0 auto;
-	}
+    .campaigns-wrapper {
+        display: flex;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
 </style>

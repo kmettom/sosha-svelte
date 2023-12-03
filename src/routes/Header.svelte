@@ -44,9 +44,9 @@
 	}
 
 	.corner {
-		width: 150px;
+		width: 100px;
 		height: 3em;
-		margin: 10px;
+		margin: 5px;
 	}
 	.corner.git{
 		width: 3em;
@@ -61,8 +61,7 @@
 	}
 
 	.corner img {
-		width: 125px;
-		/*height: 2em;*/
+		width: 100%;
 		object-fit: contain;
 	}
 
