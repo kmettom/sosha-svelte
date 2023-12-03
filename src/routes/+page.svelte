@@ -9,14 +9,8 @@
 
 <section>
 	<h1>
-		Dashboard
-	</h1>
-	<h2>
 		My campaigns
-	</h2>
-	<div class="btn-wrapper">
-		<a class="" href="/catalog" >Add campaign</a>
-	</div>
+	</h1>
 	<Campaigns />
 </section>
 

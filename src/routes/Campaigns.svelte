@@ -13,9 +13,8 @@
 
     onMount(() => {
         campaignsData = get(campaigns)
-        console.log("campaignsData" , campaignsData)
-        // campaignsData = campaigns
-	})
+        console.log("campaignsData", campaignsData)
+    })
 
     onDestroy(() => {
         unsubscribe()
@@ -24,36 +23,50 @@
 </script>
 
 <div class="campaigns">
-	<div>
-		<h2>Campaigns</h2>
-		<div class="campaigns-wrapper">
-			{#if campaignsData.length > 0}
-				{#each campaignsData as campaign}
-					<div class="campaign">
-						<div class="campaign-name">
-							{campaign.name}
-						</div>
-						<div class="campaign-posts">
-							<ol>
-								{#each campaign.posts as post}
-									<li>
-										{post.title}
-									</li>
-								{/each}
-							</ol>
-						</div>
-					</div>
-				{/each}
-			{/if}
-		</div>
+	{#if campaignsData.length == 0}
+		<strong>No campaigns added yet</strong>
+	{/if}
+	<div class="campaigns-wrapper">
+		{#each campaignsData as campaign}
+			<div class="campaign">
+				<div class="campaign-name">
+					<strong>Name:</strong> {campaign.name}
+				</div>
+				<div><strong>Posts:</strong></div>
+				<div class="campaign-posts">
+					<ol>
+						{#each campaign.posts as post}
+							<li>
+								{post.title}
+							</li>
+						{/each}
+					</ol>
+				</div>
+			</div>
+		{/each}
+	</div>
+	<div class="btn-wrapper">
+		<a class="btn" href="/catalog" >Add campaign</a>
 	</div>
 </div>
 
 <style>
     .campaigns-wrapper {
-        display: flex;
         max-width: 800px;
         margin: 0 auto;
     }
+	.campaign{
+		vertical-align: top;
+		display: inline-block;
+		width: 300px;
+		margin: 10px;
+		padding: 10px;
+		border-radius: 10px;
+		border: 2px solid var(--gray);
+	}
+	.btn-wrapper{
+		text-align: center;
+		margin-top: 10px;
+	}
 
 </style>
